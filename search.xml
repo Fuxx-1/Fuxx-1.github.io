@@ -3435,4 +3435,225 @@ ResultSet对象时保存在内存中的，如果说查询数据的返回结果�
         <tag>Experience-Java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>图书管理系统接口说明</title>
+    <url>/2021/08/05/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="图书管理系统接口说明"><a class="header-anchor" href="#图书管理系统接口说明">✦</a>图书管理系统接口说明</h2>
+<h3 id="查询书籍信息"><a class="header-anchor" href="#查询书籍信息">✦</a>查询书籍信息</h3>
+<h4 id="分页查询书籍信息"><a class="header-anchor" href="#分页查询书籍信息">✦</a>分页查询书籍信息</h4>
+<h5 id="概述"><a class="header-anchor" href="#概述">✦</a>概述</h5>
+<ul>
+<li>该接口能获得以<code>page</code>和<code>limit</code>作为基准的数据</li>
+<li>允许使用<code>POST</code>和<code>GET</code>两种方式的请求</li>
+</ul>
+<h5 id="链接"><a class="header-anchor" href="#链接">✦</a>链接</h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/all</span></span><br></pre></td></tr></table></figure>
+<h5 id="参数说明"><a class="header-anchor" href="#参数说明">✦</a>参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>page</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">需要第几页的数据</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>limit</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">一页多少本书籍</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数据返还"><a class="header-anchor" href="#数据返还">✦</a>数据返还</h5>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;count&quot;</span>: <span class="number">1000</span>,	<span class="comment">//书籍总数</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: [&#123;&#125;, &#123;&#125;]	<span class="comment">//返还的数据</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h5 id="请求样例"><a class="header-anchor" href="#请求样例">✦</a>请求样例</h5>
+<h6 id="请求"><a class="header-anchor" href="#请求">✦</a>请求</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/all?page=2&amp;limit=5</span></span><br></pre></td></tr></table></figure>
+<h6 id="返还"><a class="header-anchor" href="#返还">✦</a>返还</h6>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="attr">&quot;count&quot;</span>: <span class="number">13</span>,</span><br><span class="line">	<span class="attr">&quot;data&quot;</span>: [&#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">579</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">6</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;Java编程思想（第二版）&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;Java四大名著&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">953</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">7</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;JAVA 2核心技术 卷I：基础知识（原书第7版）&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;Java四大名著&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">973</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">8</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;精通Hibernate：Java对象持久化技术详解&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;本书无论对于Java开发的新手还是行家来说，都是精通Java对象持久化技术的必备实用手册。&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">3429</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">9</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;Tomcat与Java Web开发技术详解&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;孙老师的每一本Java著作都在广大Java爱好者中引起抢购热潮，此次推出的新著一定也不例外。&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">834</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">10</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;软件加密技术内幕&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;无私公开极具商业价值的加密技术，打造难以破解的软件！&quot;</span></span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="根据书籍id查询"><a class="header-anchor" href="#根据书籍id查询">✦</a>根据书籍<code>id</code>查询</h4>
+<h5 id="概述-v2"><a class="header-anchor" href="#概述-v2">✦</a>概述</h5>
+<ul>
+<li>根据书籍<code>id</code>查询书籍信息</li>
+<li>使用路径获取参数<code>id</code>，<code>POST</code>、<code>GET</code>请求==均无效==</li>
+</ul>
+<h5 id="链接-v2"><a class="header-anchor" href="#链接-v2">✦</a>链接</h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/query</span></span><br></pre></td></tr></table></figure>
+<h5 id="参数说明-v2"><a class="header-anchor" href="#参数说明-v2">✦</a>参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>id</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">要查询书籍的<code>bookID</code>，使用路径提交</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数据返还-v2"><a class="header-anchor" href="#数据返还-v2">✦</a>数据返还</h5>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: [&#123;&#125;, &#123;&#125;]	<span class="comment">//返还的数据</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h5 id="请求样例-v2"><a class="header-anchor" href="#请求样例-v2">✦</a>请求样例</h5>
+<h6 id="请求-v2"><a class="header-anchor" href="#请求-v2">✦</a>请求</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/query/1</span></span><br></pre></td></tr></table></figure>
+<h6 id="返还-v2"><a class="header-anchor" href="#返还-v2">✦</a>返还</h6>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="attr">&quot;data&quot;</span>: [&#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">1</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">1</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;Java&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;从入门到入土&quot;</span></span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="根据书籍名模糊查询"><a class="header-anchor" href="#根据书籍名模糊查询">✦</a>根据书籍名模糊查询</h4>
+<h5 id="概述-v3"><a class="header-anchor" href="#概述-v3">✦</a>概述</h5>
+<ul>
+<li>根据书籍名模糊查询</li>
+<li>允许使用<code>POST</code>和<code>GET</code>两种方式的请求</li>
+</ul>
+<h5 id="链接-v3"><a class="header-anchor" href="#链接-v3">✦</a>链接</h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/queryname</span></span><br></pre></td></tr></table></figure>
+<h5 id="参数说明-v3"><a class="header-anchor" href="#参数说明-v3">✦</a>参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>name</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">要查询的书籍名</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数据返还-v3"><a class="header-anchor" href="#数据返还-v3">✦</a>数据返还</h5>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: [&#123;&#125;, &#123;&#125;]	<span class="comment">//返还的数据</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h5 id="请求样例-v3"><a class="header-anchor" href="#请求样例-v3">✦</a>请求样例</h5>
+<h6 id="请求-v3"><a class="header-anchor" href="#请求-v3">✦</a>请求</h6>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/queryname?name=my</span></span><br></pre></td></tr></table></figure>
+<h6 id="返还-v3"><a class="header-anchor" href="#返还-v3">✦</a>返还</h6>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="attr">&quot;data&quot;</span>: [&#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">10</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">2</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;MySQL&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;从删库到跑路&quot;</span></span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="增加书籍"><a class="header-anchor" href="#增加书籍">✦</a>增加书籍</h3>
+<h4 id="概述-v4"><a class="header-anchor" href="#概述-v4">✦</a>概述</h4>
+<ul>
+<li>增加书籍</li>
+<li>建议使用表单提交，并使用<code>POST</code>方式提交</li>
+</ul>
+<h4 id="链接-v4"><a class="header-anchor" href="#链接-v4">✦</a>链接</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/add</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-v4"><a class="header-anchor" href="#参数说明-v4">✦</a>参数说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>bookID</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍<code>ID</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookName</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍全名</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookCounts</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍剩余数量</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>detail</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍详情</td>
+</tr>
+</tbody>
+</table>
+<h4 id="数据返还-v4"><a class="header-anchor" href="#数据返还-v4">✦</a>数据返还</h4>
+<p>无</p>
+<h3 id="删除书籍"><a class="header-anchor" href="#删除书籍">✦</a>删除书籍</h3>
+<h4 id="概述-v5"><a class="header-anchor" href="#概述-v5">✦</a>概述</h4>
+<ul>
+<li>使用<code>ID</code>删除书籍</li>
+<li>建议使用<code>POST</code>方式提交</li>
+</ul>
+<h4 id="链接-v5"><a class="header-anchor" href="#链接-v5">✦</a>链接</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/delete</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-v5"><a class="header-anchor" href="#参数说明-v5">✦</a>参数说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>bookID</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍<code>ID</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="修改书籍信息"><a class="header-anchor" href="#修改书籍信息">✦</a>修改书籍信息</h3>
+<h4 id="概述-v6"><a class="header-anchor" href="#概述-v6">✦</a>概述</h4>
+<ul>
+<li>修改书籍信息，除<code>ID</code>外</li>
+<li>建议使用<code>POST</code>方式提交</li>
+</ul>
+<h4 id="链接-v6"><a class="header-anchor" href="#链接-v6">✦</a>链接</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/update</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-v6"><a class="header-anchor" href="#参数说明-v6">✦</a>参数说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>bookID</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍<code>ID</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookName</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍全名</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookCounts</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍剩余数量</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>detail</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍详情</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>description</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
 </search>

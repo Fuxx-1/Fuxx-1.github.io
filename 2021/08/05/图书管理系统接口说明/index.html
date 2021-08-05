@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021 - Fuxxの博客</title>
+  <title>图书管理系统接口说明 - Fuxxの博客</title>
+  
+    <meta name="keywords" content="Spring">
   
 
   
@@ -106,7 +106,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header always shadow blur "  >
+<header id="l_header" class="l_header always shadow blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -259,7 +259,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  featured' style="display: ;">
+        <div id="full" class='cover-wrapper post featured' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -291,433 +291,433 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md blur article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
+    
+      <h1 class="title">
+        图书管理系统接口说明
+      </h1>
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/02/23/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8DHexo%E5%8D%9A%E5%AE%A2/">
-        备份和恢复Hexo博客
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h1>前言</h1>
-<p>由于之前忘记备份Hexo博客的markdown文件，在重做系统时候还忘记备份博客了，导致现在不得不重新从网页上扒下来之前的文章重新写一遍，十分耗费精力。因此在网上找了下如何备份Hexo博客，在此记录下。</p>
-    
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/about/" rel="nofollow">
+    <img no-lazy src="https://fuxx-1.github.io/files/img/avatar.jpg">
+    <p>Fuxx-1</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/description/">description</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2021-02-23</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月5日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/hexo/">hexo</a>
+          
+            
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h2 id="图书管理系统接口说明"><a class="header-anchor" href="#图书管理系统接口说明">✦</a>图书管理系统接口说明</h2>
+<h3 id="查询书籍信息"><a class="header-anchor" href="#查询书籍信息">✦</a>查询书籍信息</h3>
+<h4 id="分页查询书籍信息"><a class="header-anchor" href="#分页查询书籍信息">✦</a>分页查询书籍信息</h4>
+<h5 id="概述"><a class="header-anchor" href="#概述">✦</a>概述</h5>
+<ul>
+<li>该接口能获得以<code>page</code>和<code>limit</code>作为基准的数据</li>
+<li>允许使用<code>POST</code>和<code>GET</code>两种方式的请求</li>
+</ul>
+<h5 id="链接"><a class="header-anchor" href="#链接">✦</a>链接</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/all</span></span><br></pre></td></tr></table></figure>
+<h5 id="参数说明"><a class="header-anchor" href="#参数说明">✦</a>参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>page</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">需要第几页的数据</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>limit</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">一页多少本书籍</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数据返还"><a class="header-anchor" href="#数据返还">✦</a>数据返还</h5>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;count&quot;</span>: <span class="number">1000</span>,	<span class="comment">//书籍总数</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: [&#123;&#125;, &#123;&#125;]	<span class="comment">//返还的数据</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h5 id="请求样例"><a class="header-anchor" href="#请求样例">✦</a>请求样例</h5>
+<h6 id="请求"><a class="header-anchor" href="#请求">✦</a>请求</h6>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/all?page=2&amp;limit=5</span></span><br></pre></td></tr></table></figure>
+<h6 id="返还"><a class="header-anchor" href="#返还">✦</a>返还</h6>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="attr">&quot;count&quot;</span>: <span class="number">13</span>,</span><br><span class="line">	<span class="attr">&quot;data&quot;</span>: [&#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">579</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">6</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;Java编程思想（第二版）&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;Java四大名著&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">953</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">7</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;JAVA 2核心技术 卷I：基础知识（原书第7版）&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;Java四大名著&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">973</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">8</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;精通Hibernate：Java对象持久化技术详解&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;本书无论对于Java开发的新手还是行家来说，都是精通Java对象持久化技术的必备实用手册。&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">3429</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">9</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;Tomcat与Java Web开发技术详解&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;孙老师的每一本Java著作都在广大Java爱好者中引起抢购热潮，此次推出的新著一定也不例外。&quot;</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">834</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">10</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;软件加密技术内幕&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;无私公开极具商业价值的加密技术，打造难以破解的软件！&quot;</span></span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="根据书籍id查询"><a class="header-anchor" href="#根据书籍id查询">✦</a>根据书籍<code>id</code>查询</h4>
+<h5 id="概述-v2"><a class="header-anchor" href="#概述-v2">✦</a>概述</h5>
+<ul>
+<li>根据书籍<code>id</code>查询书籍信息</li>
+<li>使用路径获取参数<code>id</code>，<code>POST</code>、<code>GET</code>请求==均无效==</li>
+</ul>
+<h5 id="链接-v2"><a class="header-anchor" href="#链接-v2">✦</a>链接</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/query</span></span><br></pre></td></tr></table></figure>
+<h5 id="参数说明-v2"><a class="header-anchor" href="#参数说明-v2">✦</a>参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>id</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">要查询书籍的<code>bookID</code>，使用路径提交</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数据返还-v2"><a class="header-anchor" href="#数据返还-v2">✦</a>数据返还</h5>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: [&#123;&#125;, &#123;&#125;]	<span class="comment">//返还的数据</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h5 id="请求样例-v2"><a class="header-anchor" href="#请求样例-v2">✦</a>请求样例</h5>
+<h6 id="请求-v2"><a class="header-anchor" href="#请求-v2">✦</a>请求</h6>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/query/1</span></span><br></pre></td></tr></table></figure>
+<h6 id="返还-v2"><a class="header-anchor" href="#返还-v2">✦</a>返还</h6>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="attr">&quot;data&quot;</span>: [&#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">1</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">1</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;Java&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;从入门到入土&quot;</span></span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="根据书籍名模糊查询"><a class="header-anchor" href="#根据书籍名模糊查询">✦</a>根据书籍名模糊查询</h4>
+<h5 id="概述-v3"><a class="header-anchor" href="#概述-v3">✦</a>概述</h5>
+<ul>
+<li>根据书籍名模糊查询</li>
+<li>允许使用<code>POST</code>和<code>GET</code>两种方式的请求</li>
+</ul>
+<h5 id="链接-v3"><a class="header-anchor" href="#链接-v3">✦</a>链接</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/queryname</span></span><br></pre></td></tr></table></figure>
+<h5 id="参数说明-v3"><a class="header-anchor" href="#参数说明-v3">✦</a>参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>name</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">要查询的书籍名</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数据返还-v3"><a class="header-anchor" href="#数据返还-v3">✦</a>数据返还</h5>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: [&#123;&#125;, &#123;&#125;]	<span class="comment">//返还的数据</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h5 id="请求样例-v3"><a class="header-anchor" href="#请求样例-v3">✦</a>请求样例</h5>
+<h6 id="请求-v3"><a class="header-anchor" href="#请求-v3">✦</a>请求</h6>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/queryname?name=my</span></span><br></pre></td></tr></table></figure>
+<h6 id="返还-v3"><a class="header-anchor" href="#返还-v3">✦</a>返还</h6>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;code&quot;</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="attr">&quot;count&quot;</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="attr">&quot;data&quot;</span>: [&#123;</span><br><span class="line">		<span class="attr">&quot;bookCounts&quot;</span>: <span class="number">10</span>,</span><br><span class="line">		<span class="attr">&quot;bookID&quot;</span>: <span class="number">2</span>,</span><br><span class="line">		<span class="attr">&quot;bookName&quot;</span>: <span class="string">&quot;MySQL&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;从删库到跑路&quot;</span></span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="增加书籍"><a class="header-anchor" href="#增加书籍">✦</a>增加书籍</h3>
+<h4 id="概述-v4"><a class="header-anchor" href="#概述-v4">✦</a>概述</h4>
+<ul>
+<li>增加书籍</li>
+<li>建议使用表单提交，并使用<code>POST</code>方式提交</li>
+</ul>
+<h4 id="链接-v4"><a class="header-anchor" href="#链接-v4">✦</a>链接</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/add</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-v4"><a class="header-anchor" href="#参数说明-v4">✦</a>参数说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>bookID</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍<code>ID</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookName</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍全名</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookCounts</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍剩余数量</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>detail</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍详情</td>
+</tr>
+</tbody>
+</table>
+<h4 id="数据返还-v4"><a class="header-anchor" href="#数据返还-v4">✦</a>数据返还</h4>
+<p>无</p>
+<h3 id="删除书籍"><a class="header-anchor" href="#删除书籍">✦</a>删除书籍</h3>
+<h4 id="概述-v5"><a class="header-anchor" href="#概述-v5">✦</a>概述</h4>
+<ul>
+<li>使用<code>ID</code>删除书籍</li>
+<li>建议使用<code>POST</code>方式提交</li>
+</ul>
+<h4 id="链接-v5"><a class="header-anchor" href="#链接-v5">✦</a>链接</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/delete</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-v5"><a class="header-anchor" href="#参数说明-v5">✦</a>参数说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>bookID</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍<code>ID</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="修改书籍信息"><a class="header-anchor" href="#修改书籍信息">✦</a>修改书籍信息</h3>
+<h4 id="概述-v6"><a class="header-anchor" href="#概述-v6">✦</a>概述</h4>
+<ul>
+<li>修改书籍信息，除<code>ID</code>外</li>
+<li>建议使用<code>POST</code>方式提交</li>
+</ul>
+<h4 id="链接-v6"><a class="header-anchor" href="#链接-v6">✦</a>链接</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.newimg.ltd/BookControllerSystemBasedBySSMFarem/book/update</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-v6"><a class="header-anchor" href="#参数说明-v6">✦</a>参数说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>bookID</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍<code>ID</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookName</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍全名</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>bookCounts</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center">书籍剩余数量</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>detail</code></td>
+<td style="text-align:center"><code>String</code></td>
+<td style="text-align:center">书籍详情</td>
+</tr>
+</tbody>
+</table>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/02/23/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8DHexo%E5%8D%9A%E5%AE%A2/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://fuxx-1.github.io/2021/08/05/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/>http://fuxx-1.github.io/2021/08/05/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-05T20:32:55+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年8月5日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
+          
   
-  
-  
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Spring/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Spring</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-    <h2 class="article-title" >
-      <a href="/2021/02/21/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-        Java多线程
-      </a>
-    </h2>
-  
-  <div class='md'>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://fuxx-1.github.io/2021/08/05/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/&title=图书管理系统接口说明 - Fuxxの博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
     
-      <h1>Java进程和多线程</h1>
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://fuxx-1.github.io/2021/08/05/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/&title=图书管理系统接口说明 - Fuxxの博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://fuxx-1.github.io/2021/08/05/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/&title=图书管理系统接口说明 - Fuxxの博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2021-02-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/java/">java</a>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/02/21/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/'>
-            阅读全文
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/04/26/%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E9%93%BE%E8%A1%A8%E5%88%9D%E8%AF%86/'>
+          <p class='title'>结构体及链表初始<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>结构体
+✦相关定义
+结构体是一种复合类型
+
+
+复合性：
+
+结构体单元可以存储不同类型的数据
+
+
+
+是一种自定义类型
+
+
+使用
+定义类型 → 通过类型分配结构体单元 → 使用单元
+
+
+✦声明结构体...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal blur" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/02/07/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
-        Java面向对象编程
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h1>Java面向对象编程总结</h1>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-02-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/java/">java</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/02/07/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/02/01/Week2-Linux%E8%BF%90%E7%BB%B4%E6%80%BB%E7%BB%93/">
-        Week2-Linux运维总结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h1>Week2-Linux运维学习总结</h1>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-02-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/linux/">linux</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/02/01/Week2-Linux%E8%BF%90%E7%BB%B4%E6%80%BB%E7%BB%93/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/29/Linux-Problem/">
-        Linux-Problem
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h2 id="部分设置"><a class="header-anchor" href="#部分设置">✦</a>部分设置</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PS1&#x3D;&quot;\[\033[1;33;1m\][\[\033[1;34;1m\]\u@\h:\[\033[0;36;1m\]\w\[\033[1;33;1m\]]\[\033[1;31;1m\]\$ \[\033[1;32;0m\]&quot;</span><br></pre></td></tr></table></figure>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/linux/">linux</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/29/Linux-Problem/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/24/Week1-Linux%E8%BF%90%E7%BB%B4%E6%80%BB%E7%BB%93/">
-        Week1-Linux运维总结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h1>Week1-Linux运维学习总结</h1>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/linux/">linux</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/24/Week1-Linux%E8%BF%90%E7%BB%B4%E6%80%BB%E7%BB%93/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/19/Linux%E8%BF%90%E7%BB%B4-%E5%91%BD%E4%BB%A4/">
-        Linux运维-命令
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h1>Linux运维-命令【待完善】（<a target="_blank" rel="noopener" href="https://edu.aliyun.com/roadmap/linux?spm=5176.13345299.1392477.2.153cf153ebf9EP">链接</a>）</h1>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/linux/">linux</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/19/Linux%E8%BF%90%E7%BB%B4-%E5%91%BD%E4%BB%A4/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/17/Linux%E8%BF%90%E7%BB%B4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
-        Linux运维-计算机基础
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h1>Linux运维-计算机基础（<a target="_blank" rel="noopener" href="https://edu.aliyun.com/roadmap/linux?spm=5176.13345299.1392477.2.153cf153ebf9EP">链接</a>）</h1>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/linux/">linux</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/17/Linux%E8%BF%90%E7%BB%B4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal blur">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/17/Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-        Java环境配置
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h1>Java环境配置<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h1>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/java/">java</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/17/Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2021/">
-            <section class="post prev white-box blur" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -725,146 +725,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Fuxxの博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:583742849@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/fuxx-1/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/c/" href="/categories/c/"
-            id="categoriesc"
-            ><div class='name'>c</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/description/" href="/categories/description/"
-            id="categoriesdescription"
-            ><div class='name'>description</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/hexo/" href="/categories/hexo/"
-            id="categorieshexo"
-            ><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/java/" href="/categories/java/"
-            id="categoriesjava"
-            ><div class='name'>java</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/linux/" href="/categories/linux/"
-            id="categorieslinux"
-            ><div class='name'>linux</div><div class='badge'>(5)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E"><span class="toc-text">图书管理系统接口说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF"><span class="toc-text">查询书籍信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF"><span class="toc-text">分页查询书籍信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%94%E8%BF%98"><span class="toc-text">数据返还</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%A0%B7%E4%BE%8B"><span class="toc-text">请求样例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%B9%A6%E7%B1%8Did%E6%9F%A5%E8%AF%A2"><span class="toc-text">根据书籍id查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-v2"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5-v2"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-v2"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%94%E8%BF%98-v2"><span class="toc-text">数据返还</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%A0%B7%E4%BE%8B-v2"><span class="toc-text">请求样例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%B9%A6%E7%B1%8D%E5%90%8D%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-text">根据书籍名模糊查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-v3"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5-v3"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-v3"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%94%E8%BF%98-v3"><span class="toc-text">数据返还</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%A0%B7%E4%BE%8B-v3"><span class="toc-text">请求样例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E4%B9%A6%E7%B1%8D"><span class="toc-text">增加书籍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-v4"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5-v4"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-v4"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%94%E8%BF%98-v4"><span class="toc-text">数据返还</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B9%A6%E7%B1%8D"><span class="toc-text">删除书籍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-v5"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5-v5"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-v5"><span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF"><span class="toc-text">修改书籍信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-v6"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5-v6"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-v6"><span class="toc-text">参数说明</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/C-Primer-Plus/" style="font-size: 17.33px; color: #828282">C Primer Plus</a> <a href="/tags/Experience-C/" style="font-size: 20.67px; color: #6c6c6c">Experience-C</a> <a href="/tags/Experience-Java/" style="font-size: 24px; color: #555">Experience-Java</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Linux%E8%BF%90%E7%BB%B4/" style="font-size: 20.67px; color: #6c6c6c">Linux运维</a> <a href="/tags/Oj-C/" style="font-size: 17.33px; color: #828282">Oj-C</a> <a href="/tags/Spring/" style="font-size: 14px; color: #999">Spring</a> <a href="/tags/Website-Test/" style="font-size: 14px; color: #999">Website-Test</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
 		  
@@ -873,21 +755,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="图书管理系统接口说明";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
